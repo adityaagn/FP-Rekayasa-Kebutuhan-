@@ -1,6 +1,6 @@
-#FP Rekayasa Kebutuhan
-#Developer  : SI Pengumpulan KP/TA
-#Client     : PAFORE (Personal Assistent for Organizing Routine)
+FP Rekayasa Kebutuhan
+Developer  : SI Pengumpulan KP/TA
+Client     : PAFORE (Personal Assistent for Organizing Routine)
 
 Anggota Kelompok : 
 1. Aditya Gunawan   (5114100167)
