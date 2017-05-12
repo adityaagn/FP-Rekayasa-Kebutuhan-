@@ -180,41 +180,35 @@
                
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Daftar Mahasiswa
+                            Progress KP
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="<?php echo site_url('Admin') ?>">Dashboard</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-table"></i><a href="<?php echo site_url('Admin/list_mahasiswa') ?>"> Mahasiswa</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Mahasiswa
+                                <i class="fa fa-bar-chart-o"></i> Progress KP
                             </li>
                         </ol>
                     </div>
                 
+
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-lg-3">
-                            <div class="form-group input-group" >
-                                <input type="text" onkeyup="myFunction()" class="form-control" placeholder="Filter by NRP.." id="myInput">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                            </div>
-                    </div>
-                    <div class="col-lg-9">
-                            <div class="form-group input-group" >
-                                <input type="text" onkeyup="mynFunction()" class="form-control" placeholder="Filter by Nama.." id="mynInput">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                            </div>
-                    </div>  
+                    
                     <div class="col-lg-12">
                         
+                        <h2><?php echo $mhs['NRP']." - ".$mhs['Nama'] ?></h2>
                         <div class="table-responsive">
                             <table class="table table-hover table-striped " >
                                 <thead >
                                     <tr >
-                                        <th class="col-lg-2">NRP</th>
-                                        <th class="col-lg-9">Nama</th>
-                                        <th class="col-lg-1 text-center">Aksi</th>
+                                        <th class="col-lg-2">Tanggal</th>
+                                        <th class="col-lg-9">Jenis Berkas</th>
+                                        <th class="col-lg-1">Nama Berkas</th>
                                     </tr>
                                 </thead>
                                 </table>
@@ -223,18 +217,16 @@
   <table id="myTable" class="table table-hover table-striped ">
   
                                 <tbody>
-                                    <?php
-                                        foreach ($mhs as $row) 
-                                        {
-                                            echo "<tr>
-                                            <td class='col-lg-2'>$row->NRP</td>
-                                            <td class='col-lg-9'>$row->Nama</td>
-                                            <td class='col-lg-1 text-center'><a href=".site_url('Admin/data_kp/'.$row->NRP)."><button type='button' class='btn btn-xs btn-primary'>KP</button></a>
-                                        <button type='button' class='btn btn-xs btn-primary'>TA</button></td>
+                                <?php
+                                    
+                                    foreach ($dkp as $dkpr) {
+                                    echo"<tr>
+                                            <td class='col-lg-2'>".$dkpr->Tanggal."</td>
+                                            <td class='col-lg-9'>".$dkpr->{'Jenis Berkas'}."</td>
+                                            <td class='col-lg-1'>".$dkpr->{'Nama Berkas'}."</td>
                                             </tr>";
                                         }
-                                    ?>
-                                    
+                                  ?>  
                                 </tbody>
 
                             </table>
@@ -260,43 +252,7 @@
     <!-- /#wrapper -->
 
     
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-function mynFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mynInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
 
-</script>
 <!-- jQuery -->
     <script src="<?php echo base_url();?>assets/dashboard/js/jquery.js"></script>
 

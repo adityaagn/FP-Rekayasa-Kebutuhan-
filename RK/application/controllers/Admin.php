@@ -13,6 +13,15 @@ class Admin extends CI_Controller
 		$this->load->view('Pilih_mahasiswa_admin',$data);
 	}
 
+	function data_kp()
+	{
+		$this->load->model('Model_admin');
+		$NRP = $this->uri->segment(3);
+		$data['mhs']= $this->Model_admin->nama_mhs($NRP)->row_array();
+        $data['dkp'] = $this->Model_admin->kp_mhs($NRP)->result();
+		$this->load->view('Data_kp_admin',$data);
+	}
+
 	function deadline()
 	{
 		$this->load->view('Deadline_admin');
