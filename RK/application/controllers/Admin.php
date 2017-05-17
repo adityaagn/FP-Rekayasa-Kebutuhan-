@@ -35,5 +35,10 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('Deadline_admin');
 	}
+        function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url(''));
+	}    
+   
 }
 ?>

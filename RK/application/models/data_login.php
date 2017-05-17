@@ -10,4 +10,5 @@ class Data_login extends CI_Model {
         $mahasiswa = $this->db->get('mahasiswa');
         return $mahasiswa;
     }
+    
 }

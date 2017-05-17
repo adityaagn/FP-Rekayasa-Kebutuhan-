@@ -15,6 +15,7 @@ class home extends CI_Controller{
 	}
         function index(){
 		$this->load->view('login_form');
+                $data['mahasiswa']= $this->data_login->ambil_data()->result();
 	}
         
         function aksi_login(){
@@ -25,22 +26,52 @@ class home extends CI_Controller{
                 $where = array(
 			'User' => $username,
 			'Pass' => $password
+                        
+                        
 			);
                 
+                $datalogin = $this->data_login->cek_login('mahasiswa',$where);
+                $datalogin = $datalogin->result_array();
+                //echo var_dump($datalogin);
+                $jabatan = $datalogin[0]['Jabatan'];
+               
+                
 		$cek = $this->data_login->cek_login('mahasiswa',$where)->num_rows();
-		if($cek > 0){
+		if($cek > 0 && $jabatan=='admin'){
  
 			$data_session = array(
 				'nama' => $username,
-				'status' => "login"
+				'status' => "login",
+                                'jab'=>$jabatan
+                               
+                                
+                          
 				);
  
 			$this->session->set_userdata($data_session);
  
-			redirect('mahasiswa');
+			redirect('Admin');
+                        
+                        
+                        }
+                else if($cek > 0 && $jabatan=='mahasiswa'){
  
-		}else{
-			echo "Username dan password salah !";
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login",
+                                 'jab'=>$jabatan
+                          
+				);
+ 
+			$this->session->set_userdata($data_session);
+ 
+			redirect('logmhs');
+                        
+                        
+                        }
+                          
+		else{
+			echo "Username atau password salah !";
 		}
 	}
   
