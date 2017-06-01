@@ -16,5 +16,10 @@ class Model_admin extends CI_Model
 	{
 		return $this->db->get_where('data_kp',array('NRP'=>$NRP));
 	}
+
+	function tanggal($tgl)
+	{
+		return $this->db->get_where('tanggal',array('id'=>$tgl));
+	}
 }
 ?>

@@ -3,7 +3,10 @@ class Admin extends CI_Controller
 {
 	function index()
 	{
-		$this->load->view('Dashboard_admin');
+		$this->load->model('Model_admin');
+		$data['tgl1']=$this->Model_admin->tanggal(1)->row_array();
+		$data['tgl2']=$this->Model_admin->tanggal(2)->row_array();
+		$this->load->view('Dashboard_admin',$data);
 	}
         
         
@@ -35,7 +38,32 @@ class Admin extends CI_Controller
 
 	function deadline()
 	{
-		$this->load->view('Deadline_admin');
+		$this->load->model('Model_admin');
+		$data['tgl1']=$this->Model_admin->tanggal(1)->row_array();
+		$data['tgl2']=$this->Model_admin->tanggal(2)->row_array();
+		$this->load->view('Deadline_admin',$data);
+	}
+
+	function edittgl1()
+	{
+		$id         = $this->input->post('tgl');
+        $datatgl = array(
+            'id'   =>  1,
+            'tanggal'   =>  $this->input->post('tgl'));
+        $this->db->where('id',1);
+        $this->db->update('tanggal',$datatgl);
+        redirect('Admin/deadline');
+	}
+
+	function edittgl2()
+	{
+		$id         = $this->input->post('tgl');
+        $datatgl = array(
+            'id'   =>  2,
+            'tanggal'   =>  $this->input->post('tgl'));
+        $this->db->where('id',2);
+        $this->db->update('tanggal',$datatgl);
+        redirect('Admin/deadline');
 	}
         function logout(){
 		$this->session->sess_destroy();

@@ -9,7 +9,10 @@ class logmhs extends CI_Controller
 	}
 	function index()
 	{
-		$this->load->view('Dashboard_mahasiswa');
+		$this->load->model('Model_admin');
+		$data['tgl1']=$this->Model_admin->tanggal(1)->row_array();
+		$data['tgl2']=$this->Model_admin->tanggal(2)->row_array();
+		$this->load->view('Dashboard_mahasiswa',$data);
 	}
         function tambah(){
 		$this->load->view('view_signup');

@@ -28,139 +28,157 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div id="wrapper">
+        <div id="wrapper">
 
-        <!-- Navigation -->
-<?php include 'navbar.php'; ?>
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
-                    </div>
+            <!-- Navigation -->
+            <?php include 'navbar.php'; ?>
+            
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li class="active">
+                            <a href="<?php echo site_url('Admin') ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('Admin/list_mahasiswa') ?>"><i class="fa fa-fw fa-bar-chart-o"></i> Mahasiswa</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('Admin/deadline') ?>"><i class="fa fa-fw fa-table"></i> Deadline</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('Admin/logout') ?>"><i class="fa fa-fw fa-table"></i> Logout</a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- /.row -->
+            </nav>
+            <div id="page-wrapper">
 
-                <!-- /.row -->
+                <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">2</div>
-                                        <div>New Uploads</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Dashboard
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li class="active">
+                                    <i class="fa fa-dashboard"></i> Dashboard
+                                </li>
+                            </ol>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>Verified</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
+                    <!-- /.row -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Deadlines</h3>
-                            </div>
-                            <div class="row">
-                    <div class="col-lg-6">
-                        <h1>KP</h1>
-                                <div class="form-group">
-                                    <label></label>
-                                    <input type="date" value="2017-06-02" id="disabledInput"  disabled>
-                                    
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-comments fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">2</div>
+                                            <div>New Uploads</div>
+                                        </div>
+                                    </div>
                                 </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <h1>TA</h1>
-                                <div class="form-group">
-                                    <label></label>
-                                    <input type="date" value="2017-05-14" id="disabledInput2"  disabled>
-                                   
-                                </div>
-                    </div>
-                </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-tasks fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">12</div>
+                                            <div>Verified</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
 
-                
-                <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Deadlines</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h1>KP</h1>
+                                            <div class="form-group">
+                                                <label></label>
+                                                <input type="date" value="<?php echo $tgl1['tanggal']?>" id="disabledInput"  disabled>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h1>TA</h1>
+                                            <div class="form-group">
+                                                <label></label>
+                                                <input type="date" value="<?php echo $tgl2['tanggal']?>" id="disabledInput2"  disabled>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="morris-area-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        
+                        <!-- /.row -->
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- /#page-wrapper -->
 
             </div>
-            <!-- /.container-fluid -->
+            <!-- /#wrapper -->
 
-        </div>
-        <!-- /#page-wrapper -->
+            <!-- jQuery -->
+            <script src="assets/dashboard/js/jquery.js"></script>
 
-    </div>
-    <!-- /#wrapper -->
+            <!-- Bootstrap Core JavaScript -->
+            <script src="assets/dashboard/js/bootstrap.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="assets/dashboard/js/jquery.js"></script>
+            <!-- Morris Charts JavaScript -->
+            <script src="assets/dashboard/js/plugins/morris/raphael.min.js"></script>
+            <script src="assets/dashboard/js/plugins/morris/morris.min.js"></script>
+            <script src="assets/dashboard/js/plugins/morris/morris-data.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/dashboard/js/bootstrap.min.js"></script>
+        </body>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="assets/dashboard/js/plugins/morris/raphael.min.js"></script>
-    <script src="assets/dashboard/js/plugins/morris/morris.min.js"></script>
-    <script src="assets/dashboard/js/plugins/morris/morris-data.js"></script>
-
-</body>
-
-</html>
+        </html>

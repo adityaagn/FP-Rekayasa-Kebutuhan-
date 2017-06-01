@@ -29,51 +29,68 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
 
-                           <body>
+    <body>
 
-    <div id="wrapper">
+        <div id="wrapper">
 
-        <!-- Navigation -->
-       <?php include 'navbar_mhs.php'; ?>
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-               
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Upload Tugas Akhir
-                    </h1>
-                    <ol class="breadcrumb">
+            <!-- Navigation -->
+            <?php include 'navbar_mhs.php'; ?>
+            
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                            <a href="<?php echo site_url('logmhs') ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('logmhs/uploadkp') ?>"><i class="fa fa-fw fa-bar-chart-o"></i> KP</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-table"></i> Upload TA
+                            <a href="<?php echo site_url('logmhs/uploadta') ?>"><i class="fa fa-fw fa-table"></i> TA</a>
                         </li>
-                    </ol>
+                        <li>
+                            <a href="<?php echo site_url('Admin/logout') ?>"><i class="fa fa-fw fa-table"></i> Logout</a>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="row">
+            </nav>
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    
                     <div class="col-lg-12">
-                        <div class="form-group">
+                        <h1 class="page-header">
+                            Upload Tugas Akhir
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Upload TA
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
                                 <label>Input Dokumen dokumen Tugas Akhir</label>
                                 <input type="file">
                             </div>
-                    </div>
-                     <div class="clo-lg-12">
-                        <div class="form-group">
-                                    <label>Keterangan File</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              </div>
+                        </div>
+                        <div class="clo-lg-12">
+                            <div class="form-group">
+                                <label>Keterangan File</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
                     <!-- <div class="col-lg-6">
                         <h1>TA</h1>
                                 <div class="form-group">
@@ -81,21 +98,21 @@
                                     <input type="date" id="disabledInput2" disabled>
                                     <input type=button id="myButton2" class="btn btn-primary" onclick="ED2()" value="EDIT"></input>
                                 </div>
-                    </div> -->
+                            </div> -->
+                        </div>
+
+                        
+
+                        
+
+                    </div>
+                    <!-- /.container-fluid -->
+
                 </div>
-
-                
-
-                
+                <!-- /#page-wrapper -->
 
             </div>
-            <!-- /.container-fluid -->
 
-        </div>
-        <!-- /#page-wrapper -->
+        </body>
 
-    </div>
-
-</body>
-
-</html>
+        </html>

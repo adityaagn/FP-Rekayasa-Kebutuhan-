@@ -25,102 +25,125 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div id="wrapper">
+        <div id="wrapper">
 
-        <!-- Navigation -->
-        <?php include 'navbar.php'; ?>
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-               
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Deadline
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+            <!-- Navigation -->
+            <?php include 'navbar.php'; ?>
+            
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li >
+                            <a href="<?php echo site_url('Admin') ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo site_url('Admin/list_mahasiswa') ?>"><i class="fa fa-fw fa-bar-chart-o"></i> Mahasiswa</a>
                         </li>
                         <li class="active">
-                            <i class="fa fa-table"></i> Deadline
+                            <a href="<?php echo site_url('Admin/deadline') ?>"><i class="fa fa-fw fa-table"></i> Deadline</a>
                         </li>
-                    </ol>
+                        <li>
+                            <a href="<?php echo site_url('Admin/logout') ?>"><i class="fa fa-fw fa-table"></i> Logout</a>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h1>KP</h1>
-                                <div class="form-group">
-                                    <label></label>
-                                    <input type="date" id="disabledInput" disabled>
+            </nav>
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Deadline
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Deadline
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>KP</h1>
+                            <div class="form-group">
+                                <label></label>
+                                <form id="myForm" action="edittgl1" method="post">
+                                    <input type="date" value="<?php echo $tgl1['tanggal']?>" id="disabledInput" name="tgl" disabled>
                                     <input type=button id="myButton" class="btn btn-primary" onclick="ED()" value="EDIT"></input>
-                                </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <h1>TA</h1>
-                                <div class="form-group">
-                                    <label></label>
-                                    <input type="date" id="disabledInput2" disabled>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h1>TA</h1>
+                            <div class="form-group">
+                                <label></label>
+                                <form id="myForm2" action="edittgl2" method="post">
+                                    <input type="date" value="<?php echo $tgl2['tanggal']?>" id="disabledInput2" name="tgl" disabled>
                                     <input type=button id="myButton2" class="btn btn-primary" onclick="ED2()" value="EDIT"></input>
-                                </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+
+                    
+
+                    
+
                 </div>
-
-                
-
-                
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
+            <!-- /#page-wrapper -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        
+        <script>
+            function ED() {
+                if(document.getElementById("disabledInput").disabled == false)
+                {
+                    document.getElementById("myButton").value = "Edit";
+                    document.getElementById("myForm").submit();
+                    document.getElementById("disabledInput").disabled = true;
+                }
+                else if(document.getElementById("disabledInput").disabled == true)
+                {
+                    document.getElementById("myButton").value = "Apply";
+                    document.getElementById("disabledInput").disabled = false;
+                }
+            }
+            function ED2() {
+                if(document.getElementById("disabledInput2").disabled == false)
+                {
+                    document.getElementById("myButton2").value = "Edit";
+                    document.getElementById("myForm2").submit();
+                    document.getElementById("disabledInput2").disabled = true;
+                }
+                else if(document.getElementById("disabledInput2").disabled == true)
+                {
+                    document.getElementById("myButton2").value = "Apply";
+                    document.getElementById("disabledInput2").disabled = false;
+                }
+            }
 
-    
-<script>
-function ED() {
-    if(document.getElementById("disabledInput").disabled == false)
-    {
-        document.getElementById("myButton").value = "Edit";
-        document.getElementById("disabledInput").disabled = true;
-    }
-    else if(document.getElementById("disabledInput").disabled == true)
-    {
-        document.getElementById("myButton").value = "Apply";
-        document.getElementById("disabledInput").disabled = false;
-    }
-}
-function ED2() {
-    if(document.getElementById("disabledInput2").disabled == false)
-    {
-        document.getElementById("myButton2").value = "Edit";
-        document.getElementById("disabledInput2").disabled = true;
-    }
-    else if(document.getElementById("disabledInput2").disabled == true)
-    {
-        document.getElementById("myButton2").value = "Apply";
-        document.getElementById("disabledInput2").disabled = false;
-    }
-}
+        </script>
+        <!-- jQuery -->
+        <script src="assets/dashboard/js/jquery.js"></script>
 
-</script>
-<!-- jQuery -->
-    <script src="assets/dashboard/js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="assets/dashboard/js/bootstrap.min.js"></script>
+    </body>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/dashboard/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+    </html>
