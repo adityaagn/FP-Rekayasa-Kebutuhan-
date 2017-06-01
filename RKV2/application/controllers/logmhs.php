@@ -1,9 +1,37 @@
 <?php
 class logmhs extends CI_Controller
 {
+    	function __construct(){
+		parent::__construct();		
+		$this->load->model('data_login');
+		//$this->load->helper('url');
+ 
+	}
 	function index()
 	{
 		$this->load->view('Dashboard_mahasiswa');
+	}
+        function tambah(){
+		$this->load->view('view_signup');
+	}
+        
+          function tambah_user_aksi(){
+		$nama = $this->input->post('nama');
+		$nrp= $this->input->post('nrp');
+		$username = $this->input->post('user');
+                $password = $this->input->post('pass');
+                $jabatan= $this->input->post('jab');
+              
+		$data = array(
+			'Nama_mhs' => $nama,
+			'NRP' => $nrp,
+			'User' => $username,
+                        'Pass'=>$password,
+                        'Jabatan'=>$jabatan
+                        
+			);
+		$this->data_login->input_data($data,'mahasiswa');
+		redirect('');
 	}
 
 	function uploadkp()

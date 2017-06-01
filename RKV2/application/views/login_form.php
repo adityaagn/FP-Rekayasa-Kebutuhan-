@@ -75,18 +75,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
-                        	<h3>...or login with:</h3>
+                        	<h3>Sign Up here :</h3>
                         	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="www.facebook.com">
-	                        		<i class="fa fa-facebook"></i> Facebook
+                                    <a class="btn btn-link-2" href="<?php echo base_url('index.php/logmhs/tambah'); ?>">
+	                        		Register
 	                        	</a>
-	                        	<a class="btn btn-link-2" href="www.twitter.com">
-	                        		<i class="fa fa-twitter"></i> Twitter
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="www.gmail.com">
-	                        		<i class="fa fa-google-plus"></i> Google Plus
-	                        	</a>
-                        	</div>
+	                        	
                         </div>
                     </div>
                 </div>

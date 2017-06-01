@@ -5,7 +5,9 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('Dashboard_admin');
 	}
-
+        
+        
+        
 	function list_mahasiswa()
 	{
 		$this->load->model('Model_admin');
